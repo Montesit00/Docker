@@ -1,0 +1,13 @@
+Tp1 
+1)- Creamos una carpeta contenedor, esta tendra dos carpetas una de php y otra de la base de datos
+2)- creamos el contenedor de php este es el comando:
+     docker run -d -p 8088:80 -v C:\Users\Diego\Desktop\php\aplicacion-php:/var/www/html php:apache-bullseye ---> posicionarse en la carpeta aplicacion-php
+3)- creamos el contenedor de mysl con este comando:
+    docker run -d -e MYSQL_ROOT_PASSWORD=root1 -v C:\Users\Diego\Desktop\php\aplicacion-php:/docker-entrypoint-initdb.d -v C:\Users\Diego\Desktop\php\base_de_datos:/var/lib/mysql mysql:debian --> posicionarse en carpeta contenedora de las dos carpetas php y mysql
+
+4)- Despues de todo estos pasos me da este error
+    Fatal error: Uncaught Error: Class "mysqli" not found in /var/www/html/index.php:37 Stack trace: #0 {main} thrown in /var/www/html/index.php on line 37
+
+5)- Lo solucione instalando los siguientes contenedores: docker-php-ext-install mysqli  y docker-php-ext-enable mysqli. Estos comandos se instalan en el apache
+
+Listo
