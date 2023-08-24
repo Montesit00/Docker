@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Consulta de Alumnos</title>
+    <title>Consulta de Alumnos 1</title>
     <style>
         table {
             border-collapse: collapse;
@@ -28,7 +28,7 @@
     </tr>
 
     <?php
-    $servername = "172.17.0.3";
+    $servername = "172.21.0.2";
     $username = "root";
     $password = "root1";
     $dbname = "prueba";
