@@ -22,7 +22,36 @@ Tp2 -- Balanceador de Carga con HAPROXY
 	docker run -d --name mysql --network mynetwork -e MYSQL_ROOT_PASSWORD=root1 -v C:\Users\Diego\Desktop\php\aplicacion-php:/docker-entrypoint-initdb.d -v C:\Users\Diego\Desktop\php\base_de_datos:/var/lib/mysql mysql:debian --> posicionarse en carpeta global
 4)- Creo el contenedor de mi haproxy con este comando: 
 	docker run -d --name haproxy-container --network mynetwork -p 8085:80 -v C:\Users\Diego\Desktop\php/balanceador/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg haproxy:latest  ----> posicionarse en carpeta goblal
+5)- Instalo las dependencias en los contenedores web1 y web2:
+    docker exec -it web1 bash
+    docker exec -it web2 bash
+    apt-get update
+    docker-php-ext-install mysqli
+    docker-php-ext-enable mysqli
+
 
 Verificar IP de mysql para cambiar en los archivos.php asi poder tener la conexion completa
 
-    
+Tp3 -- Balanceador de Carga con sitios nodejs
+
+1)- Creo una carpeta contenedora en este caso se llama nodejs
+
+1,5)- Creo una nueva red con este comando: docker network create rednode
+
+2)- Creo 3 carpetas, dos son para el front y uno para el balanceador. Dentro de cada carpeta aplicacion-node estara un servidor basico que muestre un mensaje
+
+3)- Este es el comando que utilice para crear el contenedor, es importante poner el puerto de la misma direccion de port de node que esta en el vscode
+
+docker run --name nodewebuno -p 8090:81 --network rednode -v C:\Users\Diego\Desktop\php\nodejs\aplicacion-node:/usr/src/app -w /usr/src/app -d node:14 bash -c "node index.js" --> Me posiciono en la carpeta de aplicacion-node 
+
+docker run --name nodewebdos -p 8089:81 --network rednode -v C:\Users\Diego\Desktop\php\nodejs\aplicacion-node2:/usr/src/app -w /usr/src/app -d node:14 bash -c "node index.js"--> Me posiciono en la carpeta de aplicacion-node 
+
+4)- Creo ahora mi balanceador de carga con haproxy vincuando a la red dnd estan los dos servidores node
+
+docker run -d --name haproxynode --network rednode -p 8095:81 -v C:\Users\Diego\Desktop\php\nodejs\balanceador/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro haproxy:latest  
+
+5)- Ahora deberia instalar apache en 
+
+
+
+	
