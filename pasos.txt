@@ -15,6 +15,7 @@ Listo
 Tp2 -- Balanceador de Carga con HAPROXY
 
 1)- Creo una segunda carpeta para mi segunda web, esta contrenda index.php
+1.5)- Creo la red con este comando docker network create mynetwork
 2)- Creo dos contenedores php con este comando:
 	docker run -d --name web1 --network mynetwork -p 8081:80 -v C:\Users\Diego\Desktop\php\aplicacion-php:/var/www/html php:apache-bullseye ---> posicionarse en la carpeta aplicacion-php
 	docker run -d --name web2 --network mynetwork -p 8082:80 -v C:\Users\Diego\Desktop\php\aplicacion-php2:/var/www/html php:apache-bullseye ---> posicionarse en la carpeta aplicacion-php2
@@ -31,6 +32,8 @@ Tp2 -- Balanceador de Carga con HAPROXY
 
 
 Verificar IP de mysql para cambiar en los archivos.php asi poder tener la conexion completa
+
+Listo
 
 Tp3 -- Balanceador de Carga con sitios nodejs
 
@@ -50,8 +53,11 @@ docker run --name nodewebdos -p 8089:81 --network rednode -v C:\Users\Diego\Desk
 
 docker run -d --name haproxynode --network rednode -p 8095:81 -v C:\Users\Diego\Desktop\php\nodejs\balanceador/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro haproxy:latest  
 
-5)- Ahora deberia instalar apache en 
+Listo
 
+Tp4 -- Crear nuestras propias Imagenes con Dockerfile
+
+1)-
 
 
 	
