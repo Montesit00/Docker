@@ -1,0 +1,15 @@
+FROM docker:latest
+
+RUN docker swarm init
+
+RUN docker stack deploy -c docker-compose.yml servicenode
+
+RUN docker service ls
+
+RUN docker ps
+
+RUN docker exec -it $(docker service inspect -f '{{.PrimaryTask.Node}}' servicenode) bash
+
+RUN docker service update --replicas=5 servicenode
+
+RUN docker service scale servicenode=5

@@ -57,7 +57,13 @@ Listo
 
 Tp4 -- Crear nuestras propias Imagenes con Dockerfile
 
-1)-
+1)- A la carpeta nodejs en las carpetas aplicacion-node y aplicacion-node2 agrego su .dockerignore para no subir el node_modules y un dockerfile para pasarle el volumen con su puerto determinado el copy y su cmd para poder iniciar la aplicacion
+
+2)-Para el balanceador de no hace falta un dockerfile
+
+Listo 
+
+Tp5 -- 
 
 
 	

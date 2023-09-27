@@ -1,0 +1,7 @@
+Paso 1- docker swarm init
+Paso 2- docker stack deploy -c "Nombre_archivo" "Nombre del servicio" --> creo el servicio
+Paso 3- docker service ps "nombre del servicio" --> verifico si se creo
+Paso 4- docker service scale "nombre del servicio"=5 para tener 5 contenedores
+Paso 5- docker ps --> para saber el ip de cada contenedor
+Paso 6- apt-get update y apt-get install nano --> para modificar el contenedor
+Paso 7- docker service update --replicas=5 "nombre del servicio" --> para disminuir la cantidad de contenedores
