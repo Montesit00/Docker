@@ -1,4 +1,5 @@
-# Alumno: Marcos Montellano. Seminario de actualización III
+# Seminario de actualización III
+# Alumno: Marcos Montellano. 
 
 ## Tarea de la clase 07/08/23
 ### Contenedores con Apache y mysq
