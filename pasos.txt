@@ -1,4 +1,4 @@
-Tp -- Contenedores con Apache y mysql
+Tp -- Contenedores con Apache y mysql (Carpeta TP1)
 1)- Creamos una carpeta contenedor, esta tendra dos carpetas una de php y otra de la base de datos
 2)- creamos el contenedor de php este es el comando:
     docker run -d -p 8088:80 -v C:\Users\Diego\Desktop\php\aplicacion-php:/var/www/html php:apache-bullseye ---> posicionarse en la carpeta aplicacion-php
@@ -12,7 +12,7 @@ Tp -- Contenedores con Apache y mysql
 
 Listo
 
-Tp2 -- Balanceador de Carga con HAPROXY
+Tp2 -- Balanceador de Carga con HAPROXY (Carpeta Balanceador_apache)
 
 1)- Creo una segunda carpeta para mi segunda web, esta contrenda index.php
 1.5)- Creo la red con este comando docker network create mynetwork
@@ -35,7 +35,7 @@ Verificar IP de mysql para cambiar en los archivos.php asi poder tener la conexi
 
 Listo
 
-Tp3 -- Balanceador de Carga con sitios nodejs
+Tp3 -- Balanceador de Carga con sitios nodejs (Carpeta nodejs)
 
 1)- Creo una carpeta contenedora en este caso se llama nodejs
 
@@ -55,7 +55,7 @@ docker run -d --name haproxynode --network rednode -p 8095:81 -v C:\Users\Diego\
 
 Listo
 
-Tp4 -- Crear nuestras propias Imagenes con Dockerfile
+Tp4 -- Crear nuestras propias Imagenes con Dockerfile (Carpeta nodejs)
 
 1)- A la carpeta nodejs en las carpetas aplicacion-node y aplicacion-node2 agrego su .dockerignore para no subir el node_modules y un dockerfile para pasarle el volumen con su puerto determinado el copy y su cmd para poder iniciar la aplicacion
 
@@ -66,4 +66,9 @@ Listo
 Tp5 -- 
 
 
+Tp6 --
+
+
+Tp7 -- (Carpeta docker swam)
+Los pasos de este trabajo practico se encuentra en la misma carpeta
 	
