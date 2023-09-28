@@ -1,4 +1,5 @@
 # Alumno: Marcos Montellano. Seminario de actualización III
+
 ## Tarea de la clase 07/08/23
 ### Contenedores con Apache y mysq
 Los pasos que seguí están explicados en el archivo pasos.txt, este archivo se encuentra dentro de aplicacion-php. Cada vez que el servidor se reinicie cambiar la IP en index.php. Este trabajo se encuentra en la carpeta Tp1 y en el archivo.txt tiene como titulo TP1 los pasos
