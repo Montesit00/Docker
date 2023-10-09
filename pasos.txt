@@ -71,4 +71,11 @@ Tp6 --
 
 Tp7 -- (Carpeta docker swam)
 Los pasos de este trabajo practico se encuentra en la misma carpeta
+
+Listo
+
+Tp8 -- (Carpeta docker swarm node/apache)
+Los pasos de este practivo se encuentra en la misma carpeta
+
+Listo
 	

@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  servicio-apache:
+    image: servicio-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./apache:/usr/local/apache2/htdocs
+    networks:
+      - swarm_tp
+
+  servicio-nodejs:
+    image: servicio-node
+    ports:
+      - "8090:3000"
+    volumes:
+      - ./node:/usr/src/app
+    networks:
+      - swarm_tp
+
+  mysql1:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: prueba
+      MYSQL_ROOT_PASSWORD: root1
+    command: --init-file /docker-entrypoint-initdb.d/datos.sql
+    volumes:
+      - ./datos.sql:/docker-entrypoint-initdb.d/datos.sql
+    networks:
+      - swarm_tp
+
+networks:
+  swarm_tp:
+    driver: overlay
