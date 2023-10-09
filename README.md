@@ -22,6 +22,6 @@ Los pasos que seguí están explicados en el archivo.txt, en este archivo se enc
 ### Titulo:  Docker Swarm
 Este trabajo se encuentra en la carpeta **docker swam**. Dentro de esta carpeta esta los pasos que seguí en el **archivo.txt**. Aplicacion con node, mensaje: Hola mundo 1,2 y 3 cada vez que se hace f5
 
-# Tarea de la clase 08/10/23
+# Tarea de la clase 02/10/23
 ### Titulo:  Docker Swarm con apache y node
 Este trabajo se encuentra en la carpeta **docker_swarm_apache_node**. Dentro de esta carpeta esta los pasos que seguí en el **archivo.txt**. Aplicacion con node y apache conexion a una bd, Este trabajo miestra los datos de la bd en los dos servicios
