@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestión de Contenedores</title>
+</head>
+<body>
+    <h1 id="titulo">Gestión de Contenedores</h1>
+
+    <form action="/crear-contenedor" method="POST">
+        <label for="nombre">Nombre del contenedor: </label>
+        <input type="text" name="nombre">
+        <button type="submit">+</button>
+    </form>
+
+    <form action="/eliminar-contenedor" method="POST">
+        <label for="id">Nombre del contenedor: </label>
+        <input type="text" name="id" required>
+        <button type="submit">-</button>
+    </form>
+</body>
+</html>

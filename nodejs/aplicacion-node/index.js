@@ -7,6 +7,7 @@ app.get('/', (req, res) => {
 });
 
 // Inicia el servidor
-app.listen(81, () => {
-  console.log("Servidor escuchando en http://localhost:81")
+//81 puerto
+app.listen(3000, () => { 
+  console.log("Servidor escuchando en http://localhost:3000")
 });

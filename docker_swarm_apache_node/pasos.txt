@@ -33,3 +33,5 @@ TP 8 - Servicios apache y node
     docker swarm leave --force
 
 10)- Si se utiliza este comando se tiene que volver a repetir el proceso, pasos 6 y 7.
+
+11)- Para ejecutar el tp seguir el paso 10 

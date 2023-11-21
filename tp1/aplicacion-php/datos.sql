@@ -6,7 +6,7 @@ CREATE DATABASE IF NOT EXISTS prueba;
 USE prueba;
 
 -- Crear la tabla "alumnos"
-CREATE TABLE IF NOT EXISTS alumnos (
+CREATE TABLE IF NOT EXISTS personas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     apellidos VARCHAR(200),
     nombres VARCHAR(200),
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS alumnos (
 );
 
 -- Insertar registros en la tabla "alumnos"
-INSERT INTO alumnos (apellidos, nombres, dni) VALUES
-    ('García', 'Juan', 345678901),
-    ('López', 'María', 456789012),
-    ('Martínez', 'Carlos', 367890123);
+INSERT INTO personas (apellidos, nombres, dni) VALUES
+    ('Marcos', 'Montellano', 345678901),
+    ('Pablo', 'Rodriguez', 456789012),
+    ('Diego', 'Britos', 367890123);
