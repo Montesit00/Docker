@@ -1,0 +1,59 @@
+<definitions name="ConsultarAlumnosService"
+             targetNamespace="http://localhost:4001/consultar_alumnos"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://localhost:4001/consultar_alumnos"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <message name="ConsultarAlumnosNombreRequest"/>
+
+    <message name="ConsultarAlumnosNombreResponse">
+        <part name="alumnos" type="xsd:string"/>
+    </message>
+
+    <message name="ConsultarAlumnosNotaRequest"/>
+
+    <message name="ConsultarAlumnosNotaResponse">
+        <part name="alumnos" type="xsd:string"/>
+    </message>
+
+    <portType name="ConsultarAlumnosPortType">
+        <operation name="consultarAlumnosNombre">
+            <input message="tns:ConsultarAlumnosNombreRequest"/>
+            <output message="tns:ConsultarAlumnosNombreResponse"/>
+        </operation>
+        <operation name="consultarAlumnosNota">
+            <input message="tns:ConsultarAlumnosNotaRequest"/>
+            <output message="tns:ConsultarAlumnosNotaResponse"/>
+        </operation>
+    </portType>
+
+    <binding name="ConsultarAlumnosBinding" type="tns:ConsultarAlumnosPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="consultarAlumnosNombre">
+            <soap:operation soapAction="urn:consultarAlumnosNombre"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:consultarAlumnosNombre" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:consultarAlumnosNombre" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="consultarAlumnosNota">
+            <soap:operation soapAction="urn:consultarAlumnosNota"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:consultarAlumnosNota" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:consultarAlumnosNota" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="ConsultarAlumnosService">
+        <port name="ConsultarAlumnosPort" binding="tns:ConsultarAlumnosBinding">
+            <soap:address location="http://localhost:4001/consultar_alumnos"/>
+        </port>
+    </service>
+
+</definitions>

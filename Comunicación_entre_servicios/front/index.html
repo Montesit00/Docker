@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Alumnos</title>
+</head>
+<body>
+  <h1>Consulta de Alumnos</h1>
+
+  <button id="consultarSoap">Consultar con SOAP</button>
+  <button id="consultarRest">Consultar con REST</button>
+
+  <div id="resultados">
+    <!-- Aquí se mostrarán los resultados -->
+  </div>
+
+  <script>
+    function consultarSoap() {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/xml");
+
+        var raw = "<soapenv:Envelope\r\n  xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n  xmlns:web=\"http://www.example.com/\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <web:consultarAlumnos/>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>";
+
+        var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+        };
+
+        fetch("http://localhost:4001/consultar_con_soap", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    }
+
+    function consultarRest() {
+      const url = "http://localhost:3000/consultarAlumnosPorNota";
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("resultados").innerText = JSON.stringify(data);
+        })
+        .catch(error => {
+          console.error("Error en la solicitud REST:", error);
+        });
+    }
+
+    document.getElementById("consultarSoap").addEventListener("click", consultarSoap);
+    document.getElementById("consultarRest").addEventListener("click", consultarRest);
+  </script>
+</body>
+</html>

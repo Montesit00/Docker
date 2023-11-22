@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+  base-datos:
+    image: basededatos
+    environment:
+      MYSQL_ROOT_PASSWORD: root1
+    deploy:
+      replicas: 1
+    ports:
+      - "3306:3306"
+    networks:
+      - red_swarm
+
+  rest-servicio:
+    image: rest_tp
+    deploy:
+      replicas: 1
+    command: >
+      sh -c "while ! nc -z base-datos 3306; do sleep 1; done; npm start"
+    ports:
+      - "3000:3000"
+    networks:
+      - red_swarm
+
+  soap-servicio:
+    image: soap_tp
+    deploy:
+      replicas: 1
+    command: >
+      sh -c "while ! nc -z base-datos 3306; do sleep 1; done; npm start"
+    ports:
+      - "4001:4001"
+    networks:
+      - red_swarm
+
+  mi-aplicacion:
+    image: front_tp
+    ports:
+      - "80:80"
+    deploy:
+      replicas: 4
+    networks:
+      - red_swarm
+
+networks:
+  red_swarm:
