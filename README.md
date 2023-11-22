@@ -18,6 +18,10 @@ Los pasos que seguí están explicados en el archivo.txt, en este archivo se enc
 ### Titulo: Crear nuestras propias Imagenes con Dockerfile
 Los pasos que seguí están explicados en el archivo.txt, en este archivo se encuentran los pasos de como hice para crear mi propia imagen con doker. Este Trabajo esta en la carpeta nodejs y en el archivo.txt tiene como titulo TP4
 
+# Tarea de la clase 23/08/23 - 28/08/23
+### Titulo:  Aumento o Decremento de contenedor de sitios Web
+Este Trabajo esta en la carpeta docker-containers-main.
+
 # Tarea de la clase 25/09/23
 ### Titulo: Registro de Microservicios
 Los pasos que seguí están explicados en el **readme** si sigue tal cual se podra realizar el tp. Este tp se encuentra en la carpeta **Microservicios**
@@ -30,9 +34,6 @@ Este trabajo se encuentra en la carpeta **docker swam**. Dentro de esta carpeta 
 ### Titulo:  Docker Swarm con apache y node
 Este trabajo se encuentra en la carpeta **docker_swarm_apache_node**. Dentro de esta carpeta esta los pasos que seguí en el **archivo.txt**. Aplicacion con node y apache conexion a una bd, Este trabajo miestra los datos de la bd en los dos servicios
 
-# Tarea de la clase 23/10/23 - 28/10/23
-### Titulo:  Aumento o Decremento de contenedor de sitios Web
-Este Trabajo esta en la carpeta docker-containers-main.
 
 # Tarea de la clase 23/10/23
 ### Titulo:  Swarm - Comunicación entre servicios - Servicios Web SOAP y REST
